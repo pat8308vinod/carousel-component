@@ -1,0 +1,55 @@
+.banner-carousel-wrap{
+  background:#F0F7FF;
+}
+#alaska-bannerCarousel .carousel-inner{
+  padding:30px 0 80px 0;
+}
+.transition-timer-carousel-progress-bar {
+  height: 5px !important;
+  background-color: #3F5773;
+  width: 0%;
+  z-index: 11; 
+  position:relative
+}
+.alaska-progress-bar {
+  height: 5px;
+  background-color: #aab8c978;
+  width: 200px;
+  z-index: 11;
+  display:flex;
+  align-items:center;
+  margin-left:8px;
+ 
+}
+.carousel-indicators [data-bs-target] {
+  flex: 0 1 auto;
+  width: auto;
+  height: auto;
+  padding:4px 16px 6px 16px;
+  margin-right: 16px;
+  text-indent: 0;
+  cursor: pointer;
+  transition: opacity .6s ease;
+  background-color:#DCECFF;
+  border:1.5px solid #E0E8F2;
+  border-radius:10px;
+  color:#3F5773B2;
+  font-weight:700;
+  align-items:center;
+  opacity:0.7;
+
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  justify-content: flex-start;
+  padding: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  list-style: none;
+}
+.carousel-indicators button.active{
+  border-color:#314459;
+  color:#3F5773;
+}
