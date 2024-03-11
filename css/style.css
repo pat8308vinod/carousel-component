@@ -4,6 +4,9 @@
 #alaska-bannerCarousel .carousel-inner {
   padding: 30px 0 80px 0;
 }
+.carousel-progress button{
+  width:28px;
+}
 .transition-timer-carousel-progress-bar {
   height: 5px !important;
   background-color: #3f5773;
@@ -54,9 +57,10 @@
 @media screen and (max-width: 768px) {
   .carousel-indicators [data-bs-target] {
     padding: 0;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background-color:#c4c4c4;
+    opacity: 1;
   }
   .carousel-indicators {
     justify-content: center;

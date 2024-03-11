@@ -17,7 +17,9 @@ $(document).ready(function () {
     interval: false,
     pause: true,
   })
-  .on("slid.bs.carousel", function () {});
+  .on("slid.bs.carousel", function () {
+    percent = 0; // Reset the progress bar when the slide changes
+  });
 
   var barInterval = setInterval(progressBarCarousel, 30);
   
@@ -36,3 +38,4 @@ $(document).ready(function () {
     }
   });
 });
+
