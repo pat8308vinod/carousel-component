@@ -3,7 +3,10 @@
 }
 #alaska-bannerCarousel .carousel-inner {
   padding: 30px 0 80px 0;
+  cursor: grab;
+  user-select: none;
 }
+
 .carousel-progress button{
   width:28px;
 }
@@ -69,3 +72,4 @@
     font-size: 0;
   }
 }
+

@@ -2,8 +2,11 @@ $(document).ready(function () {
   var percent = 0,
     bar = $(".transition-timer-carousel-progress-bar"),
     crsl = $("#alaska-bannerCarousel"),
+    startX = 0,
+    endX = 0,
+    threshold = 50, // Adjust swipe threshold as needed
     pause = false; // Initialize pause variable
-  
+
   function progressBarCarousel() {
     bar.css({ width: percent + "%" });
     percent = percent + 0.5;
@@ -12,7 +15,7 @@ $(document).ready(function () {
       crsl.carousel("next");
     }
   }
-  
+
   crsl.carousel({
     interval: false,
     pause: true,
@@ -22,7 +25,7 @@ $(document).ready(function () {
   });
 
   var barInterval = setInterval(progressBarCarousel, 30);
-  
+
   // Pause or resume carousel on button click
   $('#toggleCarousel').click(function(){
     if (pause == false) { // Check if carousel is not paused
@@ -37,5 +40,24 @@ $(document).ready(function () {
       $(this).find('i').addClass('fa-pause').removeClass('fa-play');
     }
   });
-});
 
+  // Swipe left and right functionality
+  crsl.on('touchstart mousedown', function(e) {
+    startX = (e.type === 'touchstart') ? e.touches[0].clientX : e.clientX;
+  });
+
+  crsl.on('touchmove mousemove', function(e) {
+    endX = (e.type === 'touchmove') ? e.touches[0].clientX : e.clientX;
+  });
+
+  crsl.on('touchend mouseup', function(e) {
+    var deltaX = endX - startX;
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX > 0) {
+        crsl.carousel('prev');
+      } else {
+        crsl.carousel('next');
+      }
+    }
+  });
+});
